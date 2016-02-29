@@ -156,14 +156,35 @@ public class Tree {
 		}
 	}
 	
+	//Êä³öÊ÷µÄ¾µÏñ
+	public void imageOfTree() {
+		
+		root = imageOfTree(root);
+	}
+	
+	public TreeNode imageOfTree(TreeNode node) {
+		if(node == null || (node.left == null && node.right == null)) {
+			return node;
+		}
+		TreeNode temp = node.left;
+		node.left = node.right;
+		node.right = temp;
+		node.left = imageOfTree(node.left);
+		node.right = imageOfTree(node.right);
+		return node;
+	}
+	
 	public static void main(String[] args) {
 		Tree tree = new Tree();
-//		tree.build();
+		tree.build();
+		tree.preOrder();
+		tree.imageOfTree();
+		tree.preOrder();
 //		tree.postOrder();
-		String s1 = "abdec";
-		String s2 = "dbeac";
-		tree.rebuild(s1, s2);
-		tree.postOrder();
+//		String s1 = "abdec";
+//		String s2 = "dbeac";
+//		tree.rebuild(s1, s2);
+//		tree.postOrder();
 	}
 	
 	

@@ -18,18 +18,6 @@ public class PowTest {
 	
 	public int[] matrixPow(int[] a, int n) {
 		
-//		if(n ==0 || n == 1) {
-//			return a;
-//		}
-//		if(n % 2 == 0) {
-//			int[] temp = matrixPow(a, n/2);
-//			return matrixMult(temp, 2, 2, temp, 2, 2);
-//		}
-//		else {
-//			int[] temp = matrixPow(a, (n-1)/2);
-//			return matrixMult(matrixMult(temp, 2, 2, temp, 2, 2), 2, 2, a, 2, 2);
-//		}
-		
 		int[] res = null;
 		int[] temp = a;
 		while(n > 0) {
